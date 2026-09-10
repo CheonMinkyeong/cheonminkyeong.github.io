@@ -20,7 +20,7 @@ export default function Portfolio(){
  const filters=['All','The Four Winds','Reuben Project','EleaMusic'];
  return <>
  <a className="skip" href="#works">Skip to works</a>
- <header className="navigation"><a className="wordmark" href="#home">CM<span>千民京</span></a><nav aria-label="Main navigation"><a href="#works">Works</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact <span>↗</span></a></nav></header>
+ <header className="navigation"><a className="wordmark" href="#home" aria-label="Cheon Minkyeong — Home"><img className="brand-logo" src="/images/sen-logo.webp" alt="Cheon Minkyeong musician logo" width="66" height="59"/><span>千民京</span></a><nav aria-label="Main navigation"><a href="#works">Works</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact <span>↗</span></a></nav></header>
  <main><section className="hero" id="home">
  <div className="hero-art" aria-hidden="true"><img className="portrait" src="/images/main-portrait.webp" alt=""/>{heroWorks.map((w,i)=><img key={w.id} className={`floating-cover cover-${i}`} src={'/images/'+w.image} alt=""/>)}</div>
  <Stage/><div className="hero-vignette"/><div className="hero-copy"><p className="eyebrow">MUSIC · COLLABORATION · EXPLORATION</p><h1>Cheon<br/><em>Minkyeong</em><span>千 民 京</span></h1><a className="primary-link" href="#works"><span className="play">▶</span> Watch & Listen <span>↗</span></a></div>
@@ -37,6 +37,6 @@ export default function Portfolio(){
  <section id="about" className="section about"><div className="about-image"><img src="/images/portrait.webp" alt="Cheon Minkyeong playing guitar" loading="lazy"/></div><div><p className="eyebrow">04 / THE ARTIST</p><h2>Cheon<br/><em>Minkyeong.</em></h2><p className="artist-kanji">千民京</p><p className="about-text">Music, moving images, and the space between.<br/>Explore the recordings and collaborations collected here.</p><a className="text-link" href="#projects">Explore the projects ↗</a></div></section>
  <section id="listen" className="section live-reference"><p className="eyebrow">05 / ALSO AVAILABLE</p><details><summary>Cheon Minkyeong — Live <span>＋</span></summary><div className="live-player"><Player type="video" active={active==='video'} onActivate={()=>setActive('video')}/></div></details><div className="press-feature" id="featured-in"><h3>Featured <em>In</em></h3><a className="press-card" href="https://fellowship.j-ag.org/2021/06/01/the-four-winds/" target="_blank" rel="noreferrer"><div><p className="press-meta">AG Fellowship <span>·</span> <time dateTime="2021-06-01">June 1, 2021</time></p><h4>The Four Winds — Music &amp; Ministry</h4><p className="press-description">An introduction to The Four Winds, Cheon Minkyeong’s musical journey, and the story behind “ISAIAH 61.”</p><p className="press-action">Read the article ↗ <span>· In Japanese</span></p></div><span className="press-arrow" aria-hidden="true">↗</span></a></div></section>
  <Contact/>
- </main><footer><a href="#home">Cheon Minkyeong <span>千民京</span></a><p>Music & moving image</p><a href="#home">Back to top ↑</a></footer>
+ </main><footer><a className="footer-brand" href="#home"><img src="/images/sen-logo.webp" alt="Musician Cheon Minkyeong" width="170" height="152" loading="lazy"/></a><p>Music & moving image</p><a href="#home">Back to top ↑</a></footer>
  </>;
 }
