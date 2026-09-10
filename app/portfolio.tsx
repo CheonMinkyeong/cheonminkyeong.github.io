@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Stage from './stage';
+import Contact from './contact';
 import Player from './player';
 import { mainWorks as initialWorks, heroWorks, works as allWorks } from './works-data';
 import WorkListen from './work-listen';
@@ -19,7 +20,7 @@ export default function Portfolio(){
  const filters=['All','The Four Winds','Reuben Project','EleaMusic'];
  return <>
  <a className="skip" href="#works">Skip to works</a>
- <header className="navigation"><a className="wordmark" href="#home">CM<span>千民京</span></a><nav aria-label="Main navigation"><a href="#works">Works</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#production">Production <span>↗</span></a></nav></header>
+ <header className="navigation"><a className="wordmark" href="#home">CM<span>千民京</span></a><nav aria-label="Main navigation"><a href="#works">Works</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact <span>↗</span></a></nav></header>
  <main><section className="hero" id="home">
  <div className="hero-art" aria-hidden="true"><img className="portrait" src="/images/main-portrait.webp" alt=""/>{heroWorks.map((w,i)=><img key={w.id} className={`floating-cover cover-${i}`} src={'/images/'+w.image} alt=""/>)}</div>
  <Stage/><div className="hero-vignette"/><div className="hero-copy"><p className="eyebrow">MUSIC · COLLABORATION · EXPLORATION</p><h1>Cheon<br/><em>Minkyeong</em><span>千 民 京</span></h1><a className="primary-link" href="#works"><span className="play">▶</span> Watch & Listen <span>↗</span></a></div>
@@ -35,6 +36,7 @@ export default function Portfolio(){
  <section id="production" className="section production"><p className="eyebrow">03 / PRODUCED BY CHEON MINKYEONG</p><h2>Behind <em>the music.</em></h2><div className="production-layout"><a href="/works/casting-the-net"><img src="/images/casting-the-net.webp" alt="Casting the Net — ICF Enschede Praise album cover" loading="lazy"/></a><div><h3>Casting the Net</h3><p className="about-text">ICF Enschede Praise</p><WorkListen work={allWorks.find(w=>w.id==='casting-the-net')!}/></div></div></section>
  <section id="about" className="section about"><div className="about-image"><img src="/images/portrait.webp" alt="Cheon Minkyeong playing guitar" loading="lazy"/></div><div><p className="eyebrow">04 / THE ARTIST</p><h2>Cheon<br/><em>Minkyeong.</em></h2><p className="artist-kanji">千民京</p><p className="about-text">Music, moving images, and the space between.<br/>Explore the recordings and collaborations collected here.</p><a className="text-link" href="#projects">Explore the projects ↗</a></div></section>
  <section id="listen" className="section live-reference"><p className="eyebrow">05 / ALSO AVAILABLE</p><details><summary>Cheon Minkyeong — Live <span>＋</span></summary><div className="live-player"><Player type="video" active={active==='video'} onActivate={()=>setActive('video')}/></div></details></section>
+ <Contact/>
  </main><footer><a href="#home">Cheon Minkyeong <span>千民京</span></a><p>Music & moving image</p><a href="#home">Back to top ↑</a></footer>
  </>;
 }
