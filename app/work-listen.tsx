@@ -5,7 +5,7 @@ export default function WorkListen({work}:{work:Work}){
  const [active,setActive]=useState<'youtube'|'spotify'|null>(null);
  return <div className="work-listen">
  <div className="release-actions">
- {work.playlist&&<><button className="text-link" onClick={()=>setActive(active==='youtube'?null:'youtube')}>{active==='youtube'?'Close player':'Play playlist'} ▷</button><a className="text-link" href={'https://www.youtube.com/playlist?list='+work.playlist} target="_blank" rel="noreferrer">View playlist ↗</a></>}
+ {work.playlist&&<><button className="text-link" onClick={()=>setActive(active==='youtube'?null:'youtube')}>{active==='youtube'?'Close player':'Play playlist'} ▷</button><a className="text-link" href={'https://www.youtube.com/playlist?list='+work.playlist} target="_blank" rel="noreferrer">YouTube playlist ↗</a></>}
  {work.spotify&&<><button className="text-link" onClick={()=>setActive(active==='spotify'?null:'spotify')}>{active==='spotify'?'Close player':'Listen on Spotify'} ▷</button><a className="text-link" href={work.spotify} target="_blank" rel="noreferrer">{work.spotify.includes('/artist/')?'EleaMusic on Spotify':'Open Spotify'} ↗</a></>}
  {work.channel&&<a className="text-link" href={work.channel} target="_blank" rel="noreferrer">YouTube channel ↗</a>}
  </div>
