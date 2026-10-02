@@ -4,6 +4,10 @@ Music portfolio with an interactive 3D introduction, recordings and collaboratio
 
 Website: https://cheonminkyeong.github.io/
 
+## Maintenance handover
+
+Read [AI working rules](AGENTS.md), [handover notes](docs/HANDOVER.md), and [Antigravity starter prompt](docs/ANTIGRAVITY-START.md) before making changes. The handover notes are in Japanese. GitHub Pages is the active production host; the old Sites demo is separate.
+
 ## Development
 
 Use Node.js 24 and pnpm 11.19.0.
